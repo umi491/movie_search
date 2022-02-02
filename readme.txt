@@ -1,4 +1,4 @@
-OBJECTIVE: To learn about APIs, Python, Flask and basic web development
+OBJECTIVE: To get familiar with the basics of APIs, Python, Flask and some web development
 A simple web application which takes in search terms and returns a list of movies using the IMDB API
 
 Features to implement in the future
