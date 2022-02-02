@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Movie App</title>
-    </head>
-    <body>
-        {{ title }}<br>
-        {{ released }}<br>
-        {{ genre }}<br>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Movie App</title>
+		<link rel="stylesheet" href="static/style.css">
+		<link rel="stylesheet" href="static/app.css">
+	</head>
+	<body>
+		{% for movie in data %}
+			<div class="card center">
+					<h4>Image:</h2> <img src="{{ movie.image }}" height="400px"/><br>
+					<h4>Title:</h2> {{ movie.title }}<br>
+					<h4>Description:</h2> {{ movie.description }}<br>
+			</div>
+		{% endfor %}
+	</body>
 </html>

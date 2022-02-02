@@ -12,13 +12,8 @@ def search_home():
 @app.route('/results', methods=['POST'])
 def search_results():
     movie_title = request.form['movieTitle']
-    data = get_movies(movie_title)
-
-    title = data["Title"]
-    released = data["Released"]
-    genre = data["Genre"]
-
-    return render_template('results.html', title=title, released=released, genre=genre)
+    json_data = get_movies(movie_title)
+    return render_template('results.html', data=json_data["results"])
 
 
 if __name__ == '__main__':
@@ -26,6 +21,6 @@ if __name__ == '__main__':
 
 
 def get_movies(movie_title):
-    api_url = "http://www.omdbapi.com/?t={}&apikey=3507e773".format(movie_title)
+    api_url = "https://imdb-api.com/en/API/SearchMovie/k_yz9612sh/{}".format(movie_title)
     r = requests.get(api_url)
     return r.json()
